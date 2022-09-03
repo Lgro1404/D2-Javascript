@@ -16,7 +16,7 @@ function mostrarQuestao() {
         xObj.onload = function(){
             data = JSON.parse(xObj.responseText);
             if(questao >= data.length){
-                finalizarQuiz();
+                finalizarQuiz(data.length*3);
                 return;
             }
             document.getElementById("titulo").innerHTML = data[questao].title;
@@ -35,6 +35,11 @@ function mostrarQuestao() {
     }
 }
 
-function finalizarQuiz() {
-    alert(pontos);
+function finalizarQuiz(maxpts) {
+    document.getElementById("confirmar").classList.add("hide");
+    document.getElementById("listaRespostas").classList.add("hide");
+    document.getElementById("resultBg").classList.remove("hide");
+    document.getElementById("titulo").innerHTML = "Resultado:";
+    document.getElementById("resultado").innerHTML = pontos*100/(maxpts) + "%";
+    document.getElementById("resultBar").style.width = pontos*100/(maxpts) + "%";
 }

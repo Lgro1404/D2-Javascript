@@ -32,6 +32,17 @@ body {
     display: none;
   }
 
+  #resultBg {
+    width: 100%;
+    background-color: grey;
+  }
+  
+  #resultBar {
+    width: 1%;
+    height: 30px;
+    background-color:limegreen;
+  }
+
   ul {
     list-style-type: none;
     text-align: left;

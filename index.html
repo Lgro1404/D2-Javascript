@@ -9,13 +9,16 @@
 <body>
   <div class="conteudo">
     <h1 id="titulo">QUIZ DOS VALORES DA GTI</h1>
+    <div class = "hide" id="resultBg">
+      <div id="resultBar"></div>
+    </div>
     <ul id="listaRespostas" class="hide">
       <li><input type="radio" name="resposta"><span id = "q1"></span></li>
       <li><input type="radio" name="resposta"><span id = "q2"></span></li>
       <li><input type="radio" name="resposta"><span id = "q3"></span></li>
       <li><input type="radio" name="resposta"><span id = "q4"></span></li>
     </ul>
-    <div id="resultado"></div>
+    <div><h2 id="resultado"></h2></div>
     <button id="confirmar" onclick="mostrarQuestao()">COMEÇAR</button>
   </div>
 </body>
