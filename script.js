@@ -36,10 +36,22 @@ function mostrarQuestao() {
 }
 
 function finalizarQuiz(maxpts) {
-    document.getElementById("confirmar").classList.add("hide");
+    document.getElementById("confirmar").innerHTML="Refazer Quiz";
+    document.getElementById("confirmar").onclick = reset;
     document.getElementById("listaRespostas").classList.add("hide");
     document.getElementById("resultBg").classList.remove("hide");
     document.getElementById("titulo").innerHTML = "Resultado:";
     document.getElementById("resultado").innerHTML = pontos*100/(maxpts) + "%";
     document.getElementById("resultBar").style.width = pontos*100/(maxpts) + "%";
+}
+
+function reset(){
+    questao = -1;
+    respondido = false;
+    pontos = 0;
+    document.getElementById("resultado").innerHTML = "";
+    document.getElementById("resultBg").classList.add("hide");
+    document.getElementById("confirmar").innerHTML="Começar";
+    document.getElementById("confirmar").onclick = mostrarQuestao;
+    document.getElementById("titulo").innerHTML = "QUIZ DOS VALORES DA GTI";
 }
